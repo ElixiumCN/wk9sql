@@ -1,16 +1,16 @@
 -- [] create queries that fulfill all CRUD operations on both tables.
 
---	[Movies]
---		Create
+--	[Movies_Table]
+--	Create
 INSERT INTO movies VALUES ('Goldeneye3', 'Keanu Reeves', 4);
 INSERT INTO movies (title, actor) VALUES ('Goldeneye2', 'Keanu Reeves', 3);
---		Read
+--	Read
 SELECT * FROM movies;
---		Update
+--	Update
 UPDATE movies SET title = 'updated title', actor = 'updated actor' WHERE title = 'Spiderman';
---		Delete
+--	Delete
 DELETE FROM movies WHERE title = 'Batman';
---	[Products]
+--	[Products_Table]
 
 
 
