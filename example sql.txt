@@ -1,0 +1,41 @@
+        morning
+
+        USE bgtayfioc8yr3hqw6usl;
+-- CREATE TABLE movies (title VARCHAR(255) NOT NULL UNIQUE, actor VARCHAR(255) DEFAULT 'Not specified'); 
+
+-- alter table
+ALTER TABLE movies ADD id INT UNIQUE PRIMARY KEY AUTO_INCREMENT;
+
+-- create
+INSERT INTO movies (title, actor) VALUES ('Spideman3', 'John Smith');
+
+-- read
+SELECT * FROM movies;
+
+-- update
+UPDATE movies SET title = 'updated title', actor = 'updated actor' WHERE title = 'Spiderman';
+
+-- delete
+DELETE FROM movies WHERE title ='Spiderman2'
+
+        afternoon
+
+
+USE bgtayfioc8yr3hqw6usl;
+CREATE TABLE products 
+(
+id INT UNIQUE PRIMARY KEY AUTO_INCREMENT, 
+productName VARCHAR(255) NOT NULL UNIQUE,
+price INT DEFAULT 0
+);
+
+INSERT INTO products (productName, price) VALUES('MacBookLite', 50);
+
+SELECT * FROM products;
+SELECT * FROM products WHERE productName = 'Macbook';
+SELECT COUNT(*) AS price_less_than_500 FROM products WHERE price < 500;
+
+SELECT AVG(price) FROM products;
+SELECT SUM(price) AS price_sum FROM products;
+
+SELECT productName, price FROM products WHERE productName LIKE 'Mac%'; 
