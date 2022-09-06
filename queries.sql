@@ -1,23 +1,21 @@
 -- [] create queries that fulfill all CRUD operations on both tables.
 
---	[Movies_Table]
---	Create
+--	DB_selection
+-- USE buvkq4cpw2btxpefflpq;
+--	Movies_Table
+--	_Create
 INSERT INTO movies VALUES ('Goldeneye3', 'Keanu Reeves', 4);
 INSERT INTO movies (title, actor) VALUES ('Goldeneye2', 'Keanu Reeves', 3);
---	Read
-SELECT * FROM movies;
---	Update
-UPDATE movies SET title = 'updated title', actor = 'updated actor' WHERE title = 'Spiderman';
---	Delete
-DELETE FROM movies WHERE title = 'Batman';
---	[Products_Table]
-
-
-
--- USE buvkq4cpw2btxpefflpq;
 -- CREATE TABLE movies (title VARCHAR(255) NOT NULL UNIQUE, actor VARCHAR(255)	DEFAULT 'Not specified');
 
--- afternoon stuff
+--	_Read
+SELECT * FROM movies;
+--	_Update
+UPDATE movies SET title = 'updated title', actor = 'updated actor' WHERE title = 'Spiderman';
+--	_Delete
+DELETE FROM movies WHERE title = 'Batman';
+--	Products_Table
+--	_Create
 CREATE TABLE products
 (
 id INT UNIQUE PRIMARY KEY AUTO_INCREMENT,
@@ -26,6 +24,12 @@ price INT DEFAULT 0
 );
 
 INSERT INTO products (productName, price) VALUES('MacBook', 30);
+--	_Read
+
+
+-- afternoon stuff
+
+
 
 
 -- SELECT * FROM products;
