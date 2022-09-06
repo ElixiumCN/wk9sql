@@ -35,7 +35,7 @@ SELECT AVG(price) AS average_price FROM products;
 SELECT SUM(price) AS price_to_buy_everything FROM products;
 SELECT productName, price FROM products WHERE productName LIKE 'Macbook%';
 --	_UPDATE
-UPDATE products SET productName = 'MacBookAir 2022', price = '100' WHERE title = 'MacBookAir';
+UPDATE products SET productName = 'MacBookAir 2022', price = '100' WHERE productName = 'MacBookAir';
 
 -- 
 
