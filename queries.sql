@@ -35,19 +35,19 @@ SELECT COUNT(*) AS price_less_than FROM products WHERE price < 500;
     
 
 SELECT * FROM products;
-SELECT * FROM products WHERE productName = 'MacBook%';
 SELECT COUNT(*) FROM products;
 SELECT COUNT(*) FROM products WHERE price < 500;
 --	the number of products with price below 500
 
 SELECT AVG(price) AS average_price FROM products;
 SELECT SUM(price) AS price_to_buy_everything FROM products;
-SELECT productName, price FROM products WHERE productName LIKE 'Macbook%';
+SELECT productName, price FROM products WHERE productName LIKE '%Macbook%';
+--	List all products with MacBook anywhere in the product name.
 --	_UPDATE
 UPDATE products SET productName = 'MacBookAir 2022', price = '100' WHERE productName = 'MacBookAir';
 --	_DELETE
 DELETE FROM products WHERE productName = 'MacBook';
-DELETE FROM products WHERE productName = '%MacBook%';
+DELETE FROM products WHERE productName LIKE = '%MacBook%';
 --	Not working: Delete products with the word string MacBook anwyehere within the product name.
 --	_EXTRAS
 --	TAB_to_make_a_white_comment
