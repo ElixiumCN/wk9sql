@@ -1,4 +1,6 @@
--- [] create queries that fulfill all CRUD operations on both tables.
+--	[x] create queries that fulfill all CRUD operations on both tables.
+--	[] Build SELECT queries with a mix of aggregate functions and declarative properties.
+	(count(), min/max, WHERE, ORDER BY).
 --	DB_selection
 -- USE buvkq4cpw2btxpefflpq;
 --		Movies_Table
@@ -22,22 +24,31 @@ price INT DEFAULT 0
 );
 
 INSERT INTO products (productName, price) VALUES('MacBook', 30);
+INSERT INTO products (productName, price) VALUES('New MacBook', 30);
+
 --	_READ
+--	[] Build SELECT queries with a mix of aggregate functions and declarative properties.
+--	(count(), min/max, WHERE, ORDER BY).
+    
+SELECT COUNT(*) AS price_less_than FROM products WHERE price < 500;
+--	show price_less_than in the results grid.
+    
+
 SELECT * FROM products;
-SELECT * FROM products WHERE productName = 'Something';
+SELECT * FROM products WHERE productName = 'MacBook%';
 SELECT COUNT(*) FROM products;
 SELECT COUNT(*) FROM products WHERE price < 500;
--- the number of products with price below 500
-SELECT COUNT(*) AS price_less_than FROM products WHERE price < 500;
--- show price_less_than in results grid
+--	the number of products with price below 500
 
 SELECT AVG(price) AS average_price FROM products;
 SELECT SUM(price) AS price_to_buy_everything FROM products;
 SELECT productName, price FROM products WHERE productName LIKE 'Macbook%';
 --	_UPDATE
 UPDATE products SET productName = 'MacBookAir 2022', price = '100' WHERE productName = 'MacBookAir';
-
--- 
-
--- alter table
+--	_DELETE
+DELETE FROM products WHERE productName = 'MacBook';
+DELETE FROM products WHERE productName = '%MacBook%';
+--	Not working: Delete products with the word string MacBook anwyehere within the product name.
+--	_EXTRAS
+--	TAB_to_make_a_white_comment
 ALTER TABLE movies ADD id INT UNIQUE PRIMARY KEY AUTO_INCREMENT;
