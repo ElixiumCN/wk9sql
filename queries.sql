@@ -47,8 +47,9 @@ SELECT productName, price FROM products WHERE productName LIKE '%Macbook%';
 UPDATE products SET productName = 'MacBookAir 2022', price = '100' WHERE productName = 'MacBookAir';
 --	_DELETE
 DELETE FROM products WHERE productName = 'MacBook';
-DELETE FROM products WHERE productName LIKE = '%MacBook%';
+DELETE FROM products WHERE productName LIKE '%MacBook%';
 --	Not working: Delete products with the word string MacBook anwyehere within the product name.
+--	Have to disable safe mode to delete multiple records I see.
 --	_EXTRAS
 --	TAB_to_make_a_white_comment
 ALTER TABLE movies ADD id INT UNIQUE PRIMARY KEY AUTO_INCREMENT;
