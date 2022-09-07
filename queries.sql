@@ -1,3 +1,32 @@
+--	What is the total number of employees?
+SELECT COUNT(*) FROM current_job_detail;
+SELECT COUNT(*) FROM employee_detail;
+SELECT COUNT(employee_id) AS total_amount_of_employees FROM employee_detail;
+--	Who is the highest earning employee and what is their job title?
+SELECT name, job_title, salary AS highest_salary
+FROM employee_detail
+INNER JOIN current_job_detail ON employee_detail.employee_id = current_job_detail.employee_id
+WHERE salary = (SELECT MAX(salary) FROM current_job_detail);
+--	How many senior developers are there?
+SELECT COUNT(job_title) AS Total_Senior_Developers FROM current_job_detail WHERE job_title = 'Senior Developer';
+--	How many developers are in each wage bracket?
+SELECT
+COUNT(CASE WHEN salary BETWEEN 30000 AND 37000 THEN 1 END) AS salary_30k_to_37k,
+COUNT(CASE WHEN salary BETWEEN 37001 AND 44000 THEN 1 END) AS salary_37k_to_44k,
+COUNT(CASE WHEN salary BETWEEN 44001 AND 50000 THEN 1 END) AS salary_44k_to_50k
+FROM current_job_detail WHERE job_title = 'Developer';
+--	Who is the only employee who isn-t a developer and what is their salary?
+SELECT name, job_title, salary AS salary
+FROM employee_detail
+INNER JOIN current_job_detail ON employee_detail.employee_id = current_job_detail.employee_id
+WHERE job_title != 'Developer' AND job_title != 'Lead Developer';
+
+
+
+SELECT * FROM jobs_history;
+SELECT * FROM employee_detail;
+SELECT * FROM current_job_detail;
+
 --	[x] create queries that fulfill all CRUD operations on both tables.
 --	[] Build SELECT queries with a mix of aggregate functions and declarative properties.
 	(count(), min/max, WHERE, ORDER BY).
@@ -53,3 +82,61 @@ DELETE FROM products WHERE productName LIKE '%MacBook%';
 --	_EXTRAS
 --	TAB_to_make_a_white_comment
 ALTER TABLE movies ADD id INT UNIQUE PRIMARY KEY AUTO_INCREMENT;
+
+
+
+--	CASE
+WHEN GENDER - 'M' THEN 'Male';
+WHEN GENDER - 'F' THEN 'Female';
+WHEN GENDER - 'U' THEN 'Non-Binary';
+END AS gender_identity
+FROM employee_detail
+
+--	Inner Join
+
+SELECT employee_id, job_title, os
+FROM current_job_detail
+INNER JOIN laptop_detail
+ON current_job_detail.laptop_id = laptop_detail.laptop_id
+
+--	Left Join
+
+SELECT employee_detail.employee_id, name, job_title
+FROM employee_detail
+LEFT JOIN jobs_history
+ON employee_detail.employee_id = jobs_history.employee_id
+ORDER BY employee_detail.name;
+
+--	Right Join
+SELECT employee_detail.employee_id, name, job_title
+FROM employee_detail
+RIGHT JOIN jobs_history
+ON employee_detail.employee_id = jobs_history.employee_id
+ORDER BY employee_detail.name;
+
+--	Cross Join
+--	lists data from multiple tables.
+SELECT laptop_id, employee_id
+FROM laptop_detail
+CROSS JOIN employee_detail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
