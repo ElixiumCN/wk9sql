@@ -4,7 +4,7 @@
 [x] Delete
 
 
-node src/app.js --create --title "Batman" --actor "Christian Bale"
-node src/app.js --create --title "Batman 2" --actor "Christian Bale"
-node src/app.js --delete --title "Batman 2" --actor "Some Guy"
+node src/app.js --create --title "One" --actor "Person"
+node src/app.js --delete --title "One" --actor "Person"
+node src/app.js --update --title "One" --actor "Person" --newT "Two" --newA "Person2"
 node src/app.js --read

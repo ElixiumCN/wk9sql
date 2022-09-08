@@ -21,6 +21,18 @@ exports.listMovies = async () => {
 
 // Update
 
+exports.updateMovie = async (movieObject) => {
+    try {
+        await Movie.update(movieObject, {where: movieObject});
+        console.log({movieObject});
+        console.log("^ Movie Object ^");
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
 // Delete
 
 exports.deleteMovie = async (movieObject) => {

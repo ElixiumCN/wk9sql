@@ -1,6 +1,8 @@
 const { DataTypes } = require("sequelize")
 const { sequelize } = require("../db/connection")
 
+// Database Schema
+
 const Movie = sequelize.define("Movie", {
     title: {
         type: DataTypes.STRING,
