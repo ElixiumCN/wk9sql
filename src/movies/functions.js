@@ -21,11 +21,14 @@ exports.listMovies = async () => {
 
 // Update
 
-exports.updateMovie = async (movieObject) => {
+exports.updateMovie = async (movieObject, newObject) => {
     try {
-        await Movie.update(movieObject, {where: movieObject});
+        await Movie.update(newObject, {where: movieObject});
         console.log({movieObject});
-        console.log("^ Movie Object ^");
+        console.log("^ Existing Title ^");
+        console.log({newObject});
+        console.log("^ New Title ^");
+
     } catch (error) {
         console.log(error)
     }
