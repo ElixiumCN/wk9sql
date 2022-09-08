@@ -1,0 +1,3 @@
+node src/app.js --create --title "Batman" --actor "Christian Bale"
+node src/app.js --create --title "Batman 2" --actor "Christian Bale"
+node src/app.js --read
