@@ -43,3 +43,19 @@ exports.deleteMovie = async (movieObject) => {
         console.log(error)
     }
 }
+
+// Join 
+
+// exports.rawJoin = async () => {
+//     try {
+//     const [results] = await sequelize.query(
+//         "SELECT * FROM Movies JOIN User ON Movies.userName = User.name"
+//         // Create a column on the results grid named "userName", retrieve  
+//         // data from the "name" column in the other table named "user". 
+//     )
+//     console.table(results.map(value => value))
+//     } catch (error) {
+//         console.log(error)
+//     }
+// } 
+

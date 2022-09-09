@@ -2,9 +2,16 @@
 [x] Read 
 [x] Update
 [x] Delete
+[] Join
+
+Commented out all code associated with Join because it breaks my app
+& it is unfinished.
 
 
 node src/app.js --create --title "One" --actor "Person"
-node src/app.js --delete --title "One" --actor "Person"
-node src/app.js --update --title "One" --actor "Person" --newT "Two" --newA "Person2"
+node src/app.js --create --title "Two" --actor "Person2"
 node src/app.js --read
+node src/app.js --update --title "One" --actor "Person" --newT "Four" --newA "PersonFour"
+node src/app.js --delete --title "One" --actor "Person"
+
+node src/app.js --join --title "One" --actor "Person" --name "Human"

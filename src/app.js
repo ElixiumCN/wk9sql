@@ -4,6 +4,7 @@ const { addMovie } = require("./movies/functions.js")
 const { listMovies } = require("./movies/functions.js")
 const { deleteMovie } = require("./movies/functions.js")
 const { updateMovie } = require("./movies/functions.js")
+// const { rawJoin } = require("./movies/functions.js")
 
 const app = async (yargsObject) => {
     try {
@@ -19,6 +20,9 @@ const app = async (yargsObject) => {
         } else if (yargsObject.delete) {
             await deleteMovie({title: yargsObject.title, actor: yargsObject.actor})
             console.log(await listMovies())
+        // } else if (yargsObject.join) {
+        //     await rawJoin({title: yargsObject.title, actor: yargsObject.actor}, {name: yargsObject.name})
+        //     console.log(await listMovies())
         } else {
             console.log("Incorrect Command")
         }
