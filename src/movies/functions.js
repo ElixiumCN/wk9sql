@@ -34,8 +34,6 @@ exports.updateMovie = async (movieObject, newObject) => {
     }
 }
 
-
-
 // Delete
 
 exports.deleteMovie = async (movieObject) => {
